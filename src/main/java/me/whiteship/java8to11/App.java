@@ -16,11 +16,13 @@ public class App {
         springClasses.add(new OnlineClass(5, "rest api development", false));
 
         List<OnlineClass> javaClasses = new ArrayList<>();
-        javaClasses.add(new OnlineClass(1, "spring boot", true));
-        javaClasses.add(new OnlineClass(2, "spring data jpa", true));
-        javaClasses.add(new OnlineClass(3, "spring mvc", false));
-        javaClasses.add(new OnlineClass(4, "spring core", false));
-        javaClasses.add(new OnlineClass(5, "rest api development", false));
+        javaClasses.add(new OnlineClass(1, "The Java, Test", true));
+        javaClasses.add(new OnlineClass(2, "The Java, Code manipulation", true));
+        javaClasses.add(new OnlineClass(3, "The Java, 8 to 11", false));
+
+        List<List<OnlineClass>> keesunEvents = new ArrayList<>();
+        keesunEvents.add(springClasses);
+        keesunEvents.add(javaClasses);
 
 
         System.out.println("Spring으로 시작하는 수업");
