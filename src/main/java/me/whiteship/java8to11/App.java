@@ -1,9 +1,7 @@
 package me.whiteship.java8to11;
 
 import java.text.SimpleDateFormat;
-import java.time.Instant;
-import java.time.ZoneId;
-import java.time.ZonedDateTime;
+import java.time.*;
 import java.util.*;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
@@ -13,16 +11,17 @@ public class App {
 
     public static void main(String[] args) {
 
-        // 기계적인 시간
-        Instant instant = Instant.now();// 기준시 UTC, GMT
-        System.out.println(instant);
-        System.out.println(instant.atZone(ZoneId.of("UTC")));
+       // human date & time
+        LocalDateTime now = LocalDateTime.now();
+        System.out.println(now);
 
-        ZoneId zoneId = ZoneId.systemDefault();
-        ZonedDateTime zonedDateTime = instant.atZone(zoneId);
+        LocalDateTime birthDay = LocalDateTime.of(1982, Month.JULY, 15, 0, 0, 0);
+        ZonedDateTime nowInKorea = ZonedDateTime.now(ZoneId.of("Asia/Seoul"));
+        System.out.println(birthDay);
+        System.out.println(nowInKorea);
+
+        Instant nowInstant = Instant.now();
+        ZonedDateTime zonedDateTime = nowInstant.atZone(ZoneId.of("Asia/Seoul"));
         System.out.println(zonedDateTime);
-
-
-
     }
 }
