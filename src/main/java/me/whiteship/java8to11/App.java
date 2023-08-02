@@ -18,10 +18,9 @@ public class App {
             while (true) {
                 System.out.println("Thread: " + Thread.currentThread().getName());
                 try {
-                    Thread.sleep(1000L);
+                    Thread.sleep(3000L);
                 } catch (InterruptedException e) {
-                    System.out.println("interrupted!");
-                    return;
+                    throw new IllegalStateException(e);
                 }
 
             }
@@ -30,11 +29,11 @@ public class App {
         thread.start();
         System.out.println("Hello: " + Thread.currentThread().getName());
         try {
-            Thread.sleep(3000L);
+            thread.join();
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        thread.interrupt();
+        System.out.println(thread + "is finished");
 
     }
 
